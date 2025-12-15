@@ -1,0 +1,222 @@
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  box-sizing: border-box;
+
+
+  background-image: url('/assets/company-img.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+.login-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+
+
+.login-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  z-index: 2; 
+}
+
+
+.hero-text {
+  width: 52%;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+
+.login-card {
+  width: 360px;               
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  overflow: hidden;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  height: 96px; 
+  background-image: url('/assets/kloudspot.png'); 
+  background-size: cover;
+  background-position: center;
+}
+
+
+.login-card label {
+  display: block;
+  margin: 12px 24px 6px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333333;
+}
+
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  display: block;
+  margin: 0 24px;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(13,13,13,0.10);
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  background: #ffffff;
+  outline: none;
+}
+
+.field-error {
+  color: red;
+  font-size: 13px;
+  margin: 4px 24px; 
+}
+
+
+.password-wrapper {
+  position: relative;
+  width: calc(100% - 48px);
+  margin: 0 24px;
+ //margin: 0 24px;
+}
+
+
+.password-input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0px 14px 2px;
+  //box-sizing: border-box;
+  
+}
+
+.password-hidden {
+  position: relative;
+  width: calc(100% - 48px);
+ 
+}
+
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+
+.password-toggle mat-icon {
+  font-size: 20px;
+  color: #222;
+}
+
+
+
+
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 44px;
+  width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left:-19px;
+}
+
+
+.error-msg {
+  color: #d93025;
+  font-size: 13px;
+  margin: 6px 24px;
+}
+
+
+button[type="submit"] {
+  display: block;
+  width: calc(100% - 48px);
+  margin: 16px 24px 24px 24px;
+  height: 42px;
+  padding: 10px 20px;
+  background: #009490; 
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Disabled state */
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.login-card input:focus,
+button[type="submit"]:focus,
+.icon-btn:focus {
+  box-shadow: 0 0 0 3px rgba(0,148,144,0.08);
+  outline: none;
+  border-color: rgba(13,13,13,0.18);
+}
+
+
+@media (max-width: 1100px) {
+  .login-frame {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .hero-text { width: 100%; text-align: center; }
+  .login-card { width: 90%; max-width: 420px; }
+  .login-card input[type="email"],
+  .login-card input[type="password"] { width: calc(100% - 48px); }
+  button[type="submit"] { width: calc(100% - 48px); }
+}

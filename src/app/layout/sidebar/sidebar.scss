@@ -1,0 +1,93 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+ padding: 0;
+ background: linear-gradient(
+    180deg,
+    #1f3a3a 0%,
+    #1b4d4b 100%
+  );
+  
+}
+.card-header {
+  height: 96px; 
+  background-image: url('/assets/kloudspot.png') ; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding:0px 20px;
+
+}
+.hamburger {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.logo {
+  //padding: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #111827;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+.menu {
+  flex: 1; 
+  
+
+  padding-top: 12px;
+  margin:0
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 6px 0;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.sidebar-footer {
+  
+   
+  margin-top: auto;
+}
+
+.logout {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+

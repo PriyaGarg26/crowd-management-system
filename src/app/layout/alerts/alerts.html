@@ -1,0 +1,31 @@
+<div class="alerts-wrapper">
+  <div class="alerts-header">
+    <h3>Alerts</h3>
+    <mat-icon class="close-icon" (click)="onClose()">close</mat-icon>
+  </div>
+
+  <div class="alerts-list">
+    <div class="alert-card" *ngFor="let alert of alerts" [ngClass]="alert.severity.toLowerCase()">
+      <div class="alert-time">
+        {{ alert.time }}
+      </div>
+
+      <div class="alert-main">
+        <div class="alert-text">
+          <div class="alert-title">
+            {{ alert.name }} {{ alert.action }}
+          </div>
+
+          <div class="alert-zone">
+            <mat-icon>location_on</mat-icon>
+            {{ alert.zone }}
+          </div>
+        </div>
+
+        <span class="severity-badge">
+          {{ alert.severity }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

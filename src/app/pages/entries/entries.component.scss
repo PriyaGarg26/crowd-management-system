@@ -1,0 +1,150 @@
+// .entries-page {
+//   padding: 16px;
+// }
+
+
+// .page-title {
+//   font-size: 20px;
+//   font-weight: 500;
+//   margin-bottom: 12px;
+// }
+
+// .entries-table {
+//   width: 100%;
+//   margin-bottom: 12px;
+// }
+// .mat-cell {
+//   padding: 14px 16px !important;
+// }
+
+// .status {
+//   padding: 4px 10px;
+//   border-radius: 12px;
+//   font-size: 12px;
+//   font-weight: 500;
+
+//   &.in {
+//     background: #e6f4f1;
+//     color: #0f766e;
+//   }
+
+//   &.out {
+//     background: #fdecec;
+//     color: #b42318;
+//   }
+// ::ng-deep{
+//   .name-cell {
+//   display: flex;
+//   align-items: center;
+//   height: 49px;
+
+//   padding: 12px 12px 12px 24px; // top right bottom left
+//   gap: 8px;
+// }
+
+// .avatar {
+//     position: absolute;
+//     left: 0;
+//     top: 12px;
+//   width: 30x;
+//   min-width: 30px;
+//   height: 30px;
+//   border-radius: 50%;
+
+//   background-color: #cd6810; // tweak later if figma color differs
+//   color: #2a7f7d;
+
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   font-size: 13px;
+//   font-weight: 600;
+//   text-transform: uppercase;
+
+//   flex-shrink: 0;
+// &.entityIconCls{
+//     background-color: rgba(221,196.253,0.3490196078);
+//     color: #7103ff;
+// }
+
+// }
+
+// .person-name {
+//   font-size: 14px;
+//   font-weight: 500;
+//   color: #6b7280; // matches screenshot gray
+//   line-height: 1;
+// }
+//   }
+// }
+/* Header row background */
+/* Header row background */
+.mat-header-row {
+  background-color: #f3f4f6; /* light grey */
+}
+
+/* Header cells */
+.mat-header-cell {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #111827;
+
+  padding: 14px 16px;
+
+  /* Stronger divider below header */
+  border-bottom: 1px solid #d1d5db;
+}
+/* Body row separators – VERY subtle */
+.mat-row:not(:last-child) {
+  border-bottom: 1px solid #eef2f5;
+}
+
+/* ================= CUSTOM PAGINATOR ================= */
+
+.custom-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin: 20px 0;
+}
+
+.page-btn,
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+
+  padding: 4px 6px;
+}
+
+.page-btn.active {
+  color: #2a7f7d;
+  font-weight: 600;
+  border-bottom: 2px solid #2a7f7d;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-btn:hover:not(.active),
+.nav-btn:hover:not(:disabled) {
+  color: #111827;
+}
+.ellipsis {
+  font-size: 14px;
+  color: #9ca3af;
+  padding: 0 4px;
+}
+

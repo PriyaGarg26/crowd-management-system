@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1 class="title">{{ title }}</h1>
+
+  <mat-form-field appearance="outline" class="date-picker">
+    <input matInput [matDatepicker]="picker" placeholder="Today" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>

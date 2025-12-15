@@ -1,0 +1,275 @@
+.page-container {
+  max-width: 1200px;   
+  margin: 0 auto;    
+  padding: 0 24px;     
+}
+.overview-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top:2px ;
+  padding-bottom: 2px;
+}
+.heading{
+        font-family: 'IBM Plex Sans';
+        font-size: 20px;
+            font-weight: 500;
+            line-height: 20px;
+        
+            color:#1D1D1B;
+        
+            margin: 0 0 20px 0;
+  }
+  .date {
+  width: 220px;
+
+  
+  .mdc-text-field {
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+ 
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__trailing,
+  .mdc-notched-outline__notch {
+    border-color: #d0d5dd;
+  }
+
+  
+  &:hover {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__trailing,
+    .mdc-notched-outline__notch {
+      border-color: #b0b7c3;
+    }
+  }
+
+
+  &.mat-focused {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__trailing,
+    .mdc-notched-outline__notch {
+      border-color: #667085;
+    }
+  }
+
+
+  input.mat-mdc-input-element {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #101828;
+  }
+
+ 
+  .mat-mdc-input-element::placeholder {
+    color: #101828;
+    opacity: 1;
+    font-weight: 500;
+  }
+
+
+  .mat-mdc-icon-button {
+    color: #101828;
+  }
+}
+
+  .occupancy-section{
+    margin-top: 24px;
+  }
+  .occupancy-row {
+  display: flex;
+  gap: 16px;
+}
+.card-wide {
+    display: flex;
+    gap: 80px;
+  flex: 2;
+}
+
+.card-small {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: stretch;
+
+}
+.card-wide,
+.card-small {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  min-height: 160px;
+
+  display: flex;
+  align-items: center;
+}
+.card-wide {
+  position: relative;
+}
+
+.metric-left {
+  padding-right: 40px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.metric-right {
+  padding-left: 40px;
+}
+
+.metric-left,
+.metric-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.section-title{
+margin-bottom: 20px;
+font-family: IBM Plex Sans;
+font-weight: 500;
+font-style: Medium;
+font-size: 18px;
+line-height: 20px;
+letter-spacing: 2%;
+//text-align: center;
+
+}
+.metric-left .value,
+.metric-right .value {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card-small .value {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.trend {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.trend.positive {
+  color: #2e7d32; 
+}
+
+.trend.negative {
+  color: #c62828; 
+}
+.overall-occupancy {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+
+
+.demographics-row {
+  display: flex;
+  gap: 16px;
+}
+.demographic-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.demographic-card:first-child {
+  flex: 1;
+}
+
+.demographic-card:last-child {
+  flex: 2;
+}
+.occupancy-section,
+.overall-occupancy,
+.demographics-section {
+  margin-bottom: 24px;
+}
+.gender-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #111827;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .material-icons {
+    font-size: 24px;
+  }
+
+  .male .material-icons {
+    color: rgba(42, 127, 125, 0.6);
+  }
+
+  .female .material-icons {
+    color: #BEE5E1;
+  }
+}
+.occ-header{
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+
+}
+.graph-title{
+    font-family: IBM Plex Sans;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 20px;
+letter-spacing: 2%;
+text-align: center;
+
+}
+.trend-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+.doughnut-wrapper {
+  height: 260px;
+  width: 100%;
+  max-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.analysis-wrapper {
+  height: 260px; 
+  min-height: 240px;  
+  width: 100%;
+  position: relative;
+}
+
+
+
+
+
+
+

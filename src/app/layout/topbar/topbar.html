@@ -1,0 +1,32 @@
+<div class="topbar" [formGroup]="topBarForm">
+  <!-- LEFT -->
+  <div class="left">
+    <span class="app-name">{{ appName }}</span>
+    <div class="site-select-wrapper">
+    <mat-form-field appearance="outline" class="site-select">
+      <mat-select formControlName="selectedSite"
+    (selectionChange)="onSiteChange($event.value)" [compareWith]="compareSitesById">
+        <mat-option *ngFor="let site of sites" [value]="site">
+          {{ site.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+</div>
+  <!-- RIGHT -->
+  <div class="right">
+    <button class="icon-btn">
+      <mat-icon (click)="onAlertsClick()">notifications_none</mat-icon>
+    </button>
+
+    <div class="language">
+      {{ language }}
+    </div>
+
+    <div class="user">
+      <div class="avatar">P</div>
+      <span class="username">{{ userName }}</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+</div>

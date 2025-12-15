@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+    <div class="login-wrapper">
+        <div class="login-frame">
+            <div class="hero-text">
+                <h1>Welcome to the Crowd Management System</h1>
+            </div>
+            <div class="login-card">
+                <div class="card-header">
+
+                </div>
+                <label for="email">Log In *</label>
+                <input matInput id="email" class="email" type="email" formControlName="email"
+                    placeholder="Enter your email" />
+                @if (f['email']?.touched && f['email']?.invalid) {
+                <div class="field-error">
+                    @if (f['email'].errors?.['required']) { <div>Email is required.</div> }
+                    @if (f['email'].errors?.['email']) { <div>Please enter a valid email.</div> }
+                </div>
+                }
+
+                <label for="password">Password *</label>
+                <div [ngClass]="showPassword ? 'password-wrapper': 'password-hidden'">
+                    <input matInput id="password" class="password-input" [type]="showPassword ? 'text' : 'password'" 
+                        formControlName="password" placeholder="Enter your password" aria-required="true"
+                        autocomplete="current-password" />
+                    <!-- <span class="glyphicon" [ngClass]="{'glyphicon-eye-open':!showPassword,'glyphicon-eye-close':showPassword}"></span> -->
+                    <button class="password-toggle" mat-icon-button matSuffix type="button"
+                        (click)="togglePasswordVisibility()" [attr.aria-label]="'Toggle password visibility'"
+                        [attr.aria-pressed]="!showPassword">
+                        <mat-icon>{{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                    </button>
+                </div>
+                @if (f['password']?.touched && f['password']?.invalid) {
+                <div class="field-error">
+                    @if (f['password']?.errors?.['required']) {
+                    <div>Password is required.</div>
+                    }
+                </div>
+                }
+
+                @if (serverError) {
+                <div class="error-msg">{{ serverError }}</div>
+                }
+                <button type="submit" (click)="login()">Login</button>
+            </div>
+        </div>
+    </div>
+</form>

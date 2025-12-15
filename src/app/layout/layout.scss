@@ -1,0 +1,15 @@
+.dashboard{
+    display:flex;
+    height: 100vh;
+    width: 100%;
+}
+.content{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.page-container{
+    flex:1;
+    overflow-y: auto;
+    padding: 20px;
+}

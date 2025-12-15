@@ -1,0 +1,27 @@
+<div class="sidebar">
+  <div class="card-header">
+    <img class="logo" />
+        <button class="hamburger">
+      <mat-icon>menu</mat-icon>
+    </button>      
+    </div>
+
+  <nav class="menu"> 
+    <a
+      *ngFor="let item of menu"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </a>
+ 
+  <div class="sidebar-footer">
+    <a class="nav-item logout" (click)="logout()">
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Logout</span>
+    </a>
+  </div>
+   </nav>
+</div>

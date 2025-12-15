@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <app-sidebar></app-sidebar>
+
+  <div class="content">
+   <app-topbar></app-topbar>
+    <app-page-header></app-page-header>
+    <div class="page-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-alerts *ngIf="alertsOpen$ | async" (close)="closeAlerts()"></app-alerts>
+</div>
+
