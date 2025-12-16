@@ -11,7 +11,7 @@ export type Site = {
 })
 
 export class LayoutService {
-  private baseUrl = 'https://hiring-dev.internal.kloudspot.com/api/analytics';
+  private baseUrl = '/api/analytics';
 
   constructor(private http: HttpClient) { }
   getEntryExit(payload: any): Observable<any> {
@@ -38,7 +38,7 @@ export class LayoutService {
 
   private sites$ = new BehaviorSubject<Site[]>([]);
   loadSites(): Observable<Site[]> {
-    return this.http.get<Site[]>('https://hiring-dev.internal.kloudspot.com/api/sites').pipe(
+    return this.http.get<Site[]>('/api/sites').pipe(
       tap((sites) => {
         this.sites$.next(sites);
 

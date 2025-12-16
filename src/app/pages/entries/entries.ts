@@ -62,7 +62,6 @@ export class Entries implements OnInit {
     })
       .pipe(takeUntil(this.destroy$))
       .subscribe(res => {
-        console.log("response from site", res)
         this.totalCount = res?.totalPages ?? 0;
         this.dataSource.data = res?.records ?? [];
         this.cdr.detectChanges()
