@@ -6,7 +6,7 @@ The application visualizes crowd analytics and entry/exit data by consuming back
 ---
 
 ##  Live Demo
-https://crowd-management-system-git-main-priyagarg26s-projects.vercel.app/login
+https://crowd-management-system-smoky.vercel.app/login
 
 ---
 
