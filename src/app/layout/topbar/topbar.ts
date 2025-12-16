@@ -7,6 +7,7 @@ import { LayoutService } from '../layout.service';
 import type { Site } from '../layout.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { filter } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { filter } from 'rxjs';
   styleUrls: ['./topbar.scss']
 })
 export class Topbar {
-  constructor(private layoutService:LayoutService,private fb:FormBuilder){}
+  constructor(private layoutService:LayoutService,private fb:FormBuilder,private router:Router){}
   appName = 'Crowd Management';
   siteName = 'HQ - Bangalore';
   language = 'EN';
@@ -66,6 +67,17 @@ compareSitesById(s1: Site, s2: Site): boolean {
   return s1 && s2 && s1.siteId === s2.siteId;
 }
 onAlertsClick() {
-    this.layoutService.toggleAlerts();
-  }
+  if (this.router.url.includes('/dashboard/entries')) {
+    this.layoutService.openAlerts();  
+  } else {
+  this.router.navigate(['/dashboard/entries'], {
+    queryParams: { showAlerts: true }
+  });}
+}
+isSidebarOpen = false;
+
+toggleSidebar() {
+  this.isSidebarOpen = !this.isSidebarOpen;
+}
+
 }

@@ -125,3 +125,50 @@
 }
 
 
+@media (max-width: 768px) {
+  .topbar {
+    height: auto;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .left {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .app-name {
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .site {
+    font-size: 12px;
+  }
+
+  .site-select {
+    width: 120px;
+  }
+
+  .right {
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .language {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}
+

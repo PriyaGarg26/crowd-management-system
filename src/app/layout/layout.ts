@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Topbar } from './topbar/topbar';
 import { Sidebar } from './sidebar/sidebar';
 import { FormBuilder } from '@angular/forms';
@@ -30,6 +30,7 @@ export class Layout implements OnInit,OnDestroy{
 constructor(
   private layoutService:LayoutService,
   private socketService:SocketService, 
+  private route:ActivatedRoute
 
 ){
   this.alertsOpen$ = this.layoutService.alertsOpen$;
@@ -37,12 +38,19 @@ constructor(
 ngOnInit(): void {
   const siteId = this.layoutService.getSelectedSiteId();
   this.socketService.connect(siteId);
+  this.route.queryParams.subscribe(params => {
+      if (params['showAlerts'] === 'true') {
+        this.layoutService.openAlerts();
+      } else {
+        this.layoutService.closeAlerts();
+      }
+    });
 }
 ngOnDestroy(): void {
   this.destroyed$.next()
   this.destroyed$.complete()
 }
-
+isSidebarCollapsed=false
   
  
 
@@ -57,6 +65,8 @@ ngOnDestroy(): void {
     this.pageNumber = 1;
     
   }
+ 
+
   closeAlerts() {
     this.layoutService.closeAlerts();
   }

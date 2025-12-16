@@ -102,7 +102,7 @@
   border-bottom: 1px solid #eef2f5;
 }
 
-/* ================= CUSTOM PAGINATOR ================= */
+
 
 .custom-paginator {
   display: flex;
@@ -146,5 +146,78 @@
   font-size: 14px;
   color: #9ca3af;
   padding: 0 4px;
+}
+
+@media (max-width: 768px) {
+
+  .entries-table,
+  table {
+   // display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .mat-header-cell,
+  .mat-cell {
+    padding: 10px 12px !important;
+    font-size: 12px;
+  }
+
+
+  .mat-header-cell {
+    font-size: 12px;
+  }
+
+
+  .status {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  ::ng-deep .name-cell {
+    padding-left: 20px;
+    gap: 6px;
+  }
+
+  ::ng-deep .avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  ::ng-deep .person-name {
+    font-size: 12px;
+  }
+
+
+  .custom-paginator {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .page-btn,
+  .nav-btn {
+    font-size: 12px;
+    padding: 4px;
+  }
+}
+@media (max-Width:425px){
+  .entries-table,
+  table {
+    display: block !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  .entries-table {
+    min-width: 100%;   
+  }
+
+  table {
+    width: 100%;
+  }
 }
 

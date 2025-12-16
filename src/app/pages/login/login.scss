@@ -216,7 +216,8 @@ button[type="submit"]:focus,
   }
   .hero-text { width: 100%; text-align: center; }
   .login-card { width: 90%; max-width: 420px; }
-  .login-card input[type="email"],
-  .login-card input[type="password"] { width: calc(100% - 48px); }
+  .login-card input[type="email"]
+   { width: calc(100% - 48px); }
+   .login-card input[type="password"]{width:100%}
   button[type="submit"] { width: calc(100% - 48px); }
 }

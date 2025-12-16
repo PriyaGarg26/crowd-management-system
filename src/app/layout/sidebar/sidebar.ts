@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
@@ -23,4 +23,7 @@ export class Sidebar {
     // 1. Remove tokens
     this.auth.logout()
   }
+  @Input() collapsed = false;
+  @Output() toggle = new EventEmitter<void>();
+
 }

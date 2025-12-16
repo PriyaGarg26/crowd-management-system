@@ -164,7 +164,7 @@ letter-spacing: 2%;
 }
 
 .trend.negative {
-  color: #c62828; 
+  color: #c62828 !important 
 }
 .overall-occupancy {
   background: #ffffff;
@@ -267,6 +267,92 @@ text-align: center;
   position: relative;
 }
 
+
+@media (max-width: 768px) {
+
+  
+  .page-container {
+    padding: 0 12px;
+  }
+
+
+  .overview-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .heading {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    width: 100%;
+  }
+
+  
+  .occupancy-row {
+    flex-direction: column;
+  }
+
+  .card-wide,
+  .card-small {
+    width: 100%;
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .card-wide {
+    gap: 24px;
+  }
+
+  .metric-left {
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 12px;
+  }
+
+  .metric-right {
+    padding-left: 0;
+  }
+
+  .metric-left .value,
+  .metric-right .value {
+    font-size: 28px;
+  }
+
+  .card-small .value {
+    font-size: 24px;
+  }
+
+
+  .demographics-row {
+    flex-direction: column;
+  }
+
+  .demographic-card {
+    min-height: auto;
+  }
+
+
+  .doughnut-wrapper {
+    height: 220px;
+    max-height: none;
+  }
+
+  .analysis-wrapper {
+    height: 220px;
+    min-height: auto;
+  }
+
+
+  .occupancy-section,
+  .overall-occupancy,
+  .demographics-section {
+    margin-bottom: 16px;
+  }
+}
 
 
 

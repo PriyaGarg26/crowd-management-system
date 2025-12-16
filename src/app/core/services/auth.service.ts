@@ -1,27 +1,25 @@
+import { HttpClient, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { delay, Observable ,of,tap,throwError} from "rxjs";
 
 @Injectable({providedIn:'root'})
 export class AuthService{
-    constructor(private router: Router) {}
+    constructor(private router: Router,private http:HttpClient) {}
     private readonly MOCK_USER={
         username:'test@mail.com',
         password:'12365478'
     }
     private readonly TOKEN_KEY='auth_token';
     private readonly USER_KEY='auth_user';
-    login(payload:{email:string;password:string}):Observable<{token:string;user:any}>{
-       const ok=payload && payload.email && payload.password && (payload.email===this.MOCK_USER.username && payload.password===this.MOCK_USER.password)
-       if(ok){
-        const resp={token:'mock-jwt-token',user:{name:'Demo User',email:payload.email}}
-        return of(resp).pipe(delay(500),tap(r=>{localStorage.setItem(this.TOKEN_KEY,r.token);
-    localStorage.setItem(this.USER_KEY,JSON.stringify(r.user))}))
-       }
-       return throwError(()=>({
-        status:401,
-        message:'Invalid email or password please try again'}))
-    }
+    login(payload: { email: string; password: string }) {
+  return this.http.post<any>('/api/auth/login', payload).pipe(
+    tap(res => {
+      localStorage.setItem(this.TOKEN_KEY, res.token);
+      localStorage.setItem(this.USER_KEY, JSON.stringify(res.user));
+    })
+  );
+}
     isLoggedIn():boolean{
         return !! localStorage.getItem(this.TOKEN_KEY)
     }

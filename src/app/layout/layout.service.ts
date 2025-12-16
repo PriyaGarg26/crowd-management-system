@@ -84,7 +84,9 @@ private selectedSiteId$ = new BehaviorSubject<string>(
   toggleAlerts() {
     this.alertsOpenSubject.next(!this.alertsOpenSubject.value);
   }
-
+openAlerts(){
+  this.alertsOpenSubject.next(true)
+}
   closeAlerts() {
     this.alertsOpenSubject.next(false);
   }

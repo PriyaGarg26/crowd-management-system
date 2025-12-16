@@ -1,5 +1,8 @@
 <div class="dashboard">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [collapsed]="isSidebarCollapsed"
+  (toggle)="isSidebarCollapsed = !isSidebarCollapsed">
+    
+  </app-sidebar>
 
   <div class="content">
    <app-topbar></app-topbar>
@@ -8,6 +11,6 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  <app-alerts *ngIf="alertsOpen$ | async" (close)="closeAlerts()"></app-alerts>
+  <app-alerts *ngIf="alertsOpen$ | async" (close)="closeAlerts()" class="alerts-overlay"></app-alerts>
 </div>
 

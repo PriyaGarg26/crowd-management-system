@@ -128,3 +128,53 @@ body {
 .mat-row:hover {
   background-color: #f9fafb;
 }
+
+@media (max-width: 768px) {
+
+
+  .avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+
+  .name-cell {
+    height: auto;
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .person-name {
+    font-size: 12px;
+  }
+
+  
+  .entries-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .entries-table {
+    min-width: 600px; 
+  }
+
+
+  .entries-card th,
+  .entries-card td {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+
+  .mat-cell,
+  .mat-header-cell {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+
+  .mat-row:hover {
+    background-color: inherit;
+  }
+}

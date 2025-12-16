@@ -4,6 +4,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { LayoutService } from '../../layout/layout.service'
 import { combineLatest, map, Observable, Subject, switchMap, takeUntil } from 'rxjs'
+import { ActivatedRoute } from '@angular/router';
 
 type EntryExitRecord = {
   entryUtc: string;
@@ -20,7 +21,7 @@ type EntryExitRecord = {
   ],
   encapsulation: ViewEncapsulation.None,
   templateUrl: './entries.html',
-  styleUrls: ['./entries.component.scss']
+  styleUrls: ['./entries.scss']
 })
 export class Entries implements OnInit {
 
@@ -32,10 +33,16 @@ export class Entries implements OnInit {
   pageSize = 10;
   pageIndex = 0;
 
-  constructor(private layoutService: LayoutService, private cdr: ChangeDetectorRef) { }
+  constructor(private layoutService: LayoutService, private cdr: ChangeDetectorRef,private route:ActivatedRoute) { }
   private destroy$ = new Subject<void>();
   ngOnInit(): void {
     this.loadEntries();
+    this.route.queryParams.subscribe(params => {
+      console.log("params",params)
+    if (params['showAlerts']) {
+      this.layoutService.openAlerts();
+    }
+  });
   }
   entry: any[] = []
   siteId: any
